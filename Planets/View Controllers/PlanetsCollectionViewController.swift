@@ -15,8 +15,7 @@ class PlanetsCollectionViewController: UICollectionViewController {
     let planetController = PlanetController()
     
     var planets: [Planet] {
-        let shouldShowPluto = UserDefaults.standard.bool(forKey: .shouldShowPlutoKey)
-        return shouldShowPluto ? planetController.planetsWithPluto : planetController.planetsWithoutPluto
+        return planetController.planets
     }
     
     // --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
@@ -27,7 +26,7 @@ class PlanetsCollectionViewController: UICollectionViewController {
 		updateViews()
 	}
 	
-	@objc func updateViews() {
+    @objc func updateViews() {
         collectionView?.reloadData()
 	}
     

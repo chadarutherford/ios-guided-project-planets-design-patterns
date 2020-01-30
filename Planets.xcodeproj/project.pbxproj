@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		63CFE90923E36B76005914BE /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CFE90823E36B76005914BE /* Notifications.swift */; };
+		63EEE34D23E3784200E9795E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DDBBD0A2113609700A55978 /* Main.storyboard */; };
+		63EEE34E23E3784700E9795E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DDBBD0F2113609800A55978 /* LaunchScreen.storyboard */; };
 		9D163DAF2153758F00C55F30 /* PlanetDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D163DAE2153758F00C55F30 /* PlanetDetailViewController.swift */; };
 		9DDBBD072113609700A55978 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDBBD062113609700A55978 /* AppDelegate.swift */; };
-		9DDBBD0C2113609700A55978 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DDBBD0A2113609700A55978 /* Main.storyboard */; };
 		9DDBBD0E2113609800A55978 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DDBBD0D2113609800A55978 /* Assets.xcassets */; };
-		9DDBBD112113609800A55978 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DDBBD0F2113609800A55978 /* LaunchScreen.storyboard */; };
 		9DDBBD19211360D100A55978 /* Planet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDBBD18211360D100A55978 /* Planet.swift */; };
 		9DDBBD1F211360F500A55978 /* PlanetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDBBD1E211360F500A55978 /* PlanetController.swift */; };
 		9DDBBD212113661F00A55978 /* PlanetCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDBBD202113661F00A55978 /* PlanetCollectionViewCell.swift */; };
@@ -184,9 +184,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9DDBBD112113609800A55978 /* LaunchScreen.storyboard in Resources */,
+				63EEE34E23E3784700E9795E /* LaunchScreen.storyboard in Resources */,
+				63EEE34D23E3784200E9795E /* Main.storyboard in Resources */,
 				9DDBBD0E2113609800A55978 /* Assets.xcassets in Resources */,
-				9DDBBD0C2113609700A55978 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
