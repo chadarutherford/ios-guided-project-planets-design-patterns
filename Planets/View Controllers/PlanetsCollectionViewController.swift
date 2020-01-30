@@ -8,12 +8,10 @@
 
 import UIKit
 
-
-
 class PlanetsCollectionViewController: UICollectionViewController {
     
+    // --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
     // MARK: - Properties
-    
     let planetController = PlanetController()
     
     var planets: [Planet] {
@@ -21,18 +19,20 @@ class PlanetsCollectionViewController: UICollectionViewController {
         return shouldShowPluto ? planetController.planetsWithPluto : planetController.planetsWithoutPluto
     }
     
+    // --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+    // MARK: - View Controller Life Cycle
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		
+        NotificationCenter.default.addObserver(self, selector: #selector(updateViews), name: .shouldShowPlutoChanged, object: nil)
 		updateViews()
 	}
 	
-	func updateViews() {
+	@objc func updateViews() {
         collectionView?.reloadData()
 	}
     
+    // --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
     // MARK: - Navigation
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowSettings" {
 			guard let detailVC = segue.destination as? SettingsViewController else { return }
@@ -51,13 +51,16 @@ class PlanetsCollectionViewController: UICollectionViewController {
             detailVC.planet = planets[indexPath.row]
         }
     }
-	
+    
+    // --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+    // MARK: - Actions
     @IBAction func unwindToPlanetsCollectionViewController(_ sender: UIStoryboardSegue) {
 		// Update the UI if we segue back to this view controller
 		updateViews()
 	}
 }
 
+// --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 // MARK: UICollectionViewDataSource
 extension PlanetsCollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -75,6 +78,8 @@ extension PlanetsCollectionViewController {
     }
 }
 
+// --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+// MARK: - UIPopover Controller Delegate
 extension PlanetsCollectionViewController: UIPopoverPresentationControllerDelegate {
     // We can "force" an iPhone to display an iPad-like popover by changing the model
 	// presentation style in code.
@@ -83,6 +88,8 @@ extension PlanetsCollectionViewController: UIPopoverPresentationControllerDelega
     }
 }
 
+// --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+// MARK: - UIAdaptivePresentationControllerDelegate
 extension PlanetsCollectionViewController: UIAdaptivePresentationControllerDelegate {
 	func presentationControllerWillDismiss(_ presentationController: UIPresentationController) {
 		// Every time the user goes to swipe down to dismiss the modal
